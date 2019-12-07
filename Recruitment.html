@@ -3,10 +3,45 @@
 	<head>
 		<title>Microarea's recruitment 👨‍💻</title>
 		<link rel="icon" href="Immagini/Microarea-Mago.net-Logo.ico">
+		<style>
+			body
+			{
+				font-family: orkney-regular;
+				margin: 0
+			}
+			@font-face
+			{
+				font-family: orkney-regular;
+				src: url(fonts/orkney-regular.otf);
+			}
+			.call-to-action
+			{
+				border: 1px solid;
+				padding: 1em;
+				margin: 1em;
+				width: 30%;
+				background-color: lightgrey
+			}
+			.pulsante
+			{
+				position: relative;
+				float: right
+			}
+		</style>
 	</head>
-	<body bgcolor="">
-		<a href="http://www.microarea.it/"><img src="Immagini/Microarea-Logo.png"></a>
-		<a style="margin-left:3em;" href="http://www.mago4.com/"><img src="Immagini/Mago4-Logo.png" height="68"></a>
-		<p></p>
+	<body>
+		<div style="background-color:#2b78e4; padding:1em">
+			<a style="margin-right:2em" href="http://www.microarea.it/"><img src="Immagini/Microarea-Logo.png"></a>
+			<a href="http://www.mago4.com/"><img src="Immagini/Mago4-Logo.png" height="68"></a>
+		</div>
+		<div class="call-to-action">
+			Inserisci un nuovo candidato<button class="pulsante">+</button>
+		</div>
+		<div class="call-to-action">
+			Convoca un candidato<button class="pulsante">+</button>
+		</div>
+		<div class="call-to-action">
+			Esito colloqui<button class="pulsante">+</button>
+		</div>
 	</body>
 </html>
