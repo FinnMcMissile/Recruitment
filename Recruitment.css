@@ -1,0 +1,9 @@
+body{font-family: orkney-regular; margin: 0;}
+
+@font-face{font-family: orkney-regular; src: url(fonts/orkney-regular.otf);}
+
+.banner{background-color:#2b78e4; padding:1em;}
+
+.call-to-action{border: 1px solid; padding: 1em; margin: 1em; width: 17%; background-color: lightgrey;}
+
+.freccia{position: relative; float: right; padding-right: 0.5em;}
