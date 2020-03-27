@@ -1,0 +1,23 @@
+Guida completa: https://rogerdudler.github.io/git-guide/index.it.html
+
+Per vedere lo stato dei file:
+
+    git status
+
+Per aggiungere nuovi file al repository 
+
+    git add *
+
+Per validare le aggiunte ed i file modificati:
+
+    git commit -m "commento sulle cose fatte"
+
+Ora il file è correttamente nel repository locale, ma non ancora nel repository remoto.
+
+Per inviare le modifiche al repository remoto:
+
+    git push
+    
+Per scaricare le modifiche fatte da altri:
+
+    git pull
