@@ -10,37 +10,66 @@
 			<a style="margin-right:2em" href="http://www.microarea.it/"><img src="Immagini/Microarea-Logo.png"></a>
 			<a href="http://www.mago4.com/"><img src="Immagini/Mago4-Logo.png" height="68"></a>
 		</div>
-		<form action="./Candidato_aggiunto.html">
-			<div>
-				<label for="nome"><span class="asterisco">*</span>Nome</label>
-				<input type="text" id="nome" name="nome" required>
-			</div>
-			<div>
-				<label for="cognome"><span class="asterisco">*</span>Cognome</label>
-				<input type="text" id="cognome" name="cognome" required>
-			</div>
-			<div>
-				<label for="e-mail"><span class="asterisco">*</span>E-mail</label>
-				<input type="text" id="e-mail" name="e-mail" required>
-			</div>
-			<div>
-				<label for="telefono"><span class="asterisco">*</span>Telefono</label>
-				<input type="text" id="telefono" name="telefono" required>
-			</div>
-			<div>
-				<label for="profilo"><span class="asterisco">*</span>Profilo</label>
-				<input type="text" id="profilo" name="profilo" required>
-			</div>
-			<div>
-				<label for="Inbox"><span class="asterisco">*</span>Inbox</label>
-				<select id="Inbox">
-					<option value="Select_one"></option>
-					<option value="Linkedin">Linkedin</option>
-					<option value="Spontanea">Spontanea</option>
-				</select>
-			</div>
-			<p><span class="asterisco">*</span>Campo obbligatorio</p>
-			<input type="submit" class="submit" value="Aggiungi">
-		</form>
+		<h1 style="text-align: center"><a href="./Recruitment.html"><img src="Immagini/Back.svg" class="back"></a> Aggiungi un nuovo candidato</h1>
+		<div style="display: block; text-align: center">
+			<form action="./Candidato_aggiunto.html">
+				<div class="input-group">
+					<div class="input-caption">
+						<label for="nome"><span class="asterisco">*</span>Nome</label>
+					</div>
+					<div class="input-control">
+						<input type="text" id="nome" name="nome" required>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="input-caption">
+						<label for="cognome"><span class="asterisco">*</span>Cognome</label>
+					</div>
+					<div class="input-control">
+						<input type="text" id="cognome" name="cognome" required>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="input-caption">
+						<label for="e-mail"><span class="asterisco">*</span>E-mail</label>
+					</div>
+					<div class="input-control">
+						<input type="text" id="e-mail" name="e-mail" required>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="input-caption">
+						<label for="e-mail"><span class="asterisco">*</span>Telefono</label>
+					</div>
+					<div class="input-control">
+						<input type="text" id="telefono" name="telefono" required>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="input-caption">
+						<label for="profilo"><span class="asterisco">*</span>Profilo</label>
+					</div>
+					<div class="input-control">
+						<input type="text" id="profilo" name="profilo" required>
+					</div>
+				</div>
+				<div class="input-group">
+					<div class="input-caption">
+						<label for="Inbox"><span class="asterisco">*</span>Inbox</label>
+					</div>
+					<div class="input-control">
+						<select id="Inbox">
+							<option value="Select_one"></option>
+							<option value="Linkedin">Linkedin</option>
+							<option value="Spontanea">Spontanea</option>
+						</select>
+					</div>
+				</div>
+				<div class="input-message">
+					<p><span class="asterisco">*</span>Campo obbligatorio</p>
+				</div>
+				<input type="submit" class="submit" value="Aggiungi">
+			</form>
+		</div>
 	</body>
 </html>

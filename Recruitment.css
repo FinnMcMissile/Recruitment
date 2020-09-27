@@ -4,12 +4,24 @@ body{font-family: orkney-regular; margin: 0;}
 
 form{display: inline-grid;}
 
-.banner{background-color:#2b78e4; padding:1em;}
+.banner{background-color: #2b78e4; padding: 1em;}
 
 .call-to-action{border: 1px solid; padding: 1em; margin: 1em; width: 17%; background-color: lightgrey;}
 
 .freccia{position: relative; float: right; padding-right: 0.5em;}
 
-.submit{background-color: #2b78e4; color: white; margin: 0px 75px 0px 75px;}
+.back{width: 35px; height: 35px; margin: 110px 0px 0px 0px;}
+
+.input-group{display: flex; flex-direction: row;}
+
+.input-caption{align-items: center; display: flex; width: 6rem;}
+
+.input-caption label{text-align: end; margin-right: 5px; width: 100%;}
+
+.input-message{text-align: center; margin-right: 5px; width: 100%;}
+
+.input-control{align-items: center; display: flex; width: 14rem;}
+
+.submit{background-color: #2b78e4; color: white; margin: 0px 100px 0px 100px;}
 
 .asterisco{font-size: 25px; color: red;}
