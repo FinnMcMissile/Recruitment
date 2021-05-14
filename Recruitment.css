@@ -2,15 +2,15 @@ body{font-family: orkney-regular; margin: 0;}
 
 @font-face{font-family: orkney-regular; src: url(./fonts/orkney-regular.otf);}
 
-form{display: inline-grid;}
+.asterisco{font-size: 25px; color: red;}
+
+.back{width: 35px; height: 35px; margin: 110px 0px 0px 0px;}
 
 .banner{background-color: #2b78e4; padding: 1em;}
 
 .call-to-action{border: 1px solid; padding: 1em; margin: 1em; width: 17%; background-color: lightgrey;}
 
 .freccia{position: relative; float: right; padding-right: 0.5em;}
-
-.back{width: 35px; height: 35px; margin: 110px 0px 0px 0px;}
 
 .input-group{display: flex; flex-direction: row;}
 
@@ -22,6 +22,10 @@ form{display: inline-grid;}
 
 .input-control{align-items: center; display: flex; width: 14rem;}
 
+.label-right{text-align: right;}
+
+.mt-8{margin-top: 8rem;}
+
 .submit{background-color: #2b78e4; color: white; margin: 0px 100px 0px 100px;}
 
-.asterisco{font-size: 25px; color: red;}
+.titolo{text-align: center;}
