@@ -4,11 +4,13 @@ body{font-family: orkney-regular; margin: 0;}
 
 .asterisco{font-size: 25px; color: red;}
 
-.back{width: 35px; height: 35px; margin: 110px 0px 0px 0px;}
+.back{width: 35px; height: 35px;}
 
 .bg-light{background-color: #2b78e4!important;}
 
 .call-to-action{display: flex; justify-content: space-between;}
+
+.clickable{cursor: pointer;}
 
 .freccia{position: relative; float: right; padding-right: 0.5em; width: 32px;}
 

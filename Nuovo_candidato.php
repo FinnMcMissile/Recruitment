@@ -34,60 +34,96 @@
 		</nav>
 		<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
 		<div class="container">
-			<div class="container">
-				<div id="register-container" class="col-md-8 offset-md-2 mt-8">
-					<form method="post" action="Crea_candidato.php">
-						<div class="card">
-							<div class="card-body">
-								<div class="mb-3 row">
-									<label for="nome" class="col-sm-2 col-form-label label-right">Nome</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="nome" name="txtnome" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label for="cognome" class="col-sm-2 col-form-label label-right">Cognome</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" id="cognome" name="txtcognome" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label for="telefono" class="col-sm-2 col-form-label label-right">Telefono</label>
-									<div class="col-sm-10">
-										<input type="tel" class="form-control" id="telefono" name="numtelefono" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="123 456 7890" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label for="email" class="col-sm-2 col-form-label label-right">E-mail</label>
-									<div class="col-sm-10">
-										<input type="email" class="form-control" id="email" name="txtemail" required>
-									</div>
-								</div>
-								<div class="mb-3 row">
-									<label for="password" class="col-sm-2 col-form-label label-right">CV</label>
-									<div class="col-sm-10">
-										<input type="file" class="form-control" id="cv" name="cvfilename" required>
-									</div>
-								</div>
-								<div class="form-group mb-3 row">
-									<label for="occupazione" class="col-sm-2 col-form-label label-right">Occupazione</label>
-									<div class="col-sm-10">
-										<select class="form-control" id="occupazione" name="sceltaoccupazione" required>
-											<option value="Select_one"></option>
-											<option value="Occupato t.i.">Occupato a tempo indeterminato</option>
-											<option value="Occupato t.d.">Occupato a tempo determinato</option>
-											<option value="Disoccupato">Disoccupato</option>
-										</select>
-									</div>
-								</div>
-								<div>
-									<input type="submit" name="pulsanteinvia" value="Richiedi l'accesso" class="btn btn-primary">
-									<div class="form-text mt-3"><b>NB: l'account deve essere approvato dagli amministratori prima di poter essere utilizzato.</b></div>
+			<div id="create-container" class="col-md-8 offset-md-2 mt-2">
+				<form method="post" action="./Crea_candidato.php">
+					<div class="card">
+						<div class="card-body">
+							<div class="mb-3 row">
+								<label for="nome" class="col-sm-2 col-form-label label-right">Nome</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="nome" name="txtnome" required>
 								</div>
 							</div>
+							<div class="mb-3 row">
+								<label for="cognome" class="col-sm-2 col-form-label label-right">Cognome</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="cognome" name="txtcognome" required>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="telefono" class="col-sm-2 col-form-label label-right">Telefono</label>
+								<div class="col-sm-10">
+									<input type="tel" class="form-control" id="telefono" name="numtelefono" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="123 456 7890" required>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="email" class="col-sm-2 col-form-label label-right">E-mail</label>
+								<div class="col-sm-10">
+									<input type="email" class="form-control" id="email" name="txtemail" required>
+								</div>
+							</div>
+							<div class="form-group mb-3 row">
+								<label for="posizione" class="col-sm-2 col-form-label label-right">Posizione</label>
+								<div class="col-sm-10">
+									<select class="form-control" id="posizione" name="sceltaposizione" required>
+										<option value="Select_one"></option>
+										<?php
+											$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
+											if(mysqli_connect_errno())
+											{
+												die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
+											}
+											$stringa_query="SELECT ID_posizione, Nome_posizione FROM posizioni";
+											$risultato=$connessione->query($stringa_query);
+											while($riga=$risultato->fetch_assoc())
+											{
+												echo("<option value='".$riga['ID_posizione']."'>".$riga['Nome_posizione']."</option>");
+											}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="password" class="col-sm-2 col-form-label label-right">CV</label>
+								<div class="col-sm-10">
+									<input type="file" class="form-control" id="cv" name="cvfilename" required>
+								</div>
+							</div>
+							<div class="form-group mb-3 row">
+								<label for="occupazione" class="col-sm-2 col-form-label label-right">Occupazione</label>
+								<div class="col-sm-10">
+									<select class="form-control" id="occupazione" name="sceltaoccupazione" required>
+										<option value="Select_one"></option>
+										<option value="Occupato t.i.">Occupato a tempo indeterminato</option>
+										<option value="Occupato t.d.">Occupato a tempo determinato</option>
+										<option value="Disoccupato">Disoccupato</option>
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="contratto" class="col-sm-2 col-form-label label-right">Tipo contratto</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="contratto" name="txtcontratto" required>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="livello" class="col-sm-2 col-form-label label-right">Livello</label>
+								<div class="col-sm-10">
+									<input type="number" class="form-control" id="livello" name="numlivello" required>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="ral" class="col-sm-2 col-form-label label-right">RAL</label>
+								<div class="col-sm-10">
+									<input type="number" class="form-control" id="ral" name="numral" required>
+								</div>
+							</div>
+							<div>
+								<input type="submit" name="pulsanteinvia" value="Aggiungi" class="btn btn-primary">
+							</div>
 						</div>
-					</form>
-				</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</body>

@@ -34,61 +34,61 @@
 		</nav>
 		<div class="container">
 			<div class="row mt-6">
-				<div class="card col-md-4 offset-md-4">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Lista_candidati.php'">
 					<div class="card-body">
 						<div class="call-to-action">
 							<h5 class="card-title">Lista candidati</h5>
-							<a href="Lista_candidati.php"><img class="freccia" src="Immagini/Freccia_destra.svg"></a>
+							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row mt-3">
-				<div class="card col-md-4 offset-md-4">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Nuovo_candidato.php'">
 					<div class="card-body">
 						<div class="call-to-action">
 							<h5 class="card-title">Inserisci un nuovo candidato</h5>
-							<a href="Nuovo_candidato.php"><img class="freccia" src="Immagini/Freccia_destra.svg"></a>
+							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row mt-3">
-				<div class="card col-md-4 offset-md-4">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Convoca_candidato.php'">
 					<div class="card-body">
 						<div class="call-to-action">
 							<h5 class="card-title">Convoca un candidato</h5>
-							<a href="Convoca_candidato.php"><img class="freccia" src="Immagini/Freccia_destra.svg"></a>
+							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row mt-3">
-				<div class="card col-md-4 offset-md-4">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Esito_colloqui.php'">
 					<div class="card-body">
 						<div class="call-to-action">
 							<h5 class="card-title">Esito colloqui</h5>
-							<a href="Esito_colloqui.php"><img class="freccia" src="Immagini/Freccia_destra.svg"></a>
+							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row mt-3">
-				<div class="card col-md-4 offset-md-4">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Esaminatori.php'">
 					<div class="card-body">
 						<div class="call-to-action">
 							<h5 class="card-title">Esaminatori</h5>
-							<a href="Esaminatori.php"><img class="freccia" src="Immagini/Freccia_destra.svg"></a>
+							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row mt-3">
-				<div class="card col-md-4 offset-md-4">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Posizioni.php'">
 					<div class="card-body">
 						<div class="call-to-action">
 							<h5 class="card-title">Posizioni</h5>
-							<a href="Posizioni.php"><img class="freccia" src="Immagini/Freccia_destra.svg"></a>
+							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
 				</div>
