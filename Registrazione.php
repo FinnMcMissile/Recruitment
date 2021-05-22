@@ -9,7 +9,6 @@
 	{
 		die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
 	}
-	echo("<head><title>Registrazione</title><link rel='icon' href='Immagini/Microarea-Mago.net-Logo.ico'></head>");
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Registrazione.html'>Torna alla pagina di registrazione</a>";
 	session_start();
@@ -19,8 +18,8 @@
 		die($headerregister."La lunghezza della password deve essere compresa tra gli 8 e i 20 caratteri.".$tornaindietro);
 	}
 	$password_hash=password_hash($password, PASSWORD_BCRYPT);
-	$stringa_query="SELECT 'Email' FROM utenti WHERE Email='$email'";
-	$risultato=$connessione->query($stringa_query);
+	$comando="SELECT 'Email' FROM utenti WHERE Email='$email'";
+	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
 		echo($headerregister."<h1>Errore nella registrazione</h1>");
@@ -34,8 +33,8 @@
 	{
 		$telefono=('+39 '.$telefono);
 	}
-	$stringa_query="INSERT INTO utenti (Nome, Cognome, Email, Password, Telefono, Bloccato) VALUES('$nome','$cognome','$email','$password_hash','$telefono',true)";
-	$risultato=$connessione->query($stringa_query);
+	$comando="INSERT INTO utenti (Nome, Cognome, Email, Password, Telefono, Bloccato) VALUES('$nome','$cognome','$email','$password_hash','$telefono',true)";
+	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
 		echo($headerregister."<h1>Errore nella registrazione</h1>");

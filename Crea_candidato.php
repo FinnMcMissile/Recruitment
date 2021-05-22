@@ -14,12 +14,11 @@
 	{
 		die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
 	}
-	echo("<head><title>Registrazione</title><link rel='icon' href='Immagini/Microarea-Mago.net-Logo.ico'></head>");
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Nuovo_candidato.php'>Torna alla pagina di inserimento</a>";
 	session_start();
-	$stringa_query="SELECT 'Email' FROM candidati WHERE Email='$email'";
-	$risultato=$connessione->query($stringa_query);
+	$comando="SELECT 'Email' FROM candidati WHERE Email='$email'";
+	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
 		echo($headercreate."<h1>Errore nella registrazione</h1>");
@@ -27,11 +26,11 @@
 	}
 	else if($risultato->num_rows>0)
 	{
-		die($headercreate1."L'utente con questa E-mail esiste già.".$tornaindietro);
+		die($headercreate."L'utente con questa E-mail esiste già.".$tornaindietro);
 	}
 	$telefono=('+39 '.$telefono);
-	$stringa_query="INSERT INTO candidati (Nome, Cognome, Telefono, Email, CV, Occupazione, ID_posizione, Tipo_contratto, Livello, RAL, Stato) VALUES('$nome','$cognome','$telefono','$email','$cv','$occupazione','$posizione','$tipocontratto','$livello','$ral','Colloquio da fissare')";
-	$risultato=$connessione->query($stringa_query);
+	$comando="INSERT INTO candidati (Nome, Cognome, Telefono, Email, CV, Occupazione, ID_posizione, Tipo_contratto, Livello, RAL, Stato) VALUES('$nome','$cognome','$telefono','$email','$cv','$occupazione','$posizione','$tipocontratto','$livello','$ral','Colloquio da fissare')";
+	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
 		echo($headercreate."<h1>Errore nell'inserimento</h1>");

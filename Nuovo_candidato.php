@@ -66,7 +66,7 @@
 								<label for="posizione" class="col-sm-2 col-form-label label-right">Posizione</label>
 								<div class="col-sm-10">
 									<select class="form-control" id="posizione" name="sceltaposizione" required>
-										<option value="Select_one"></option>
+										<option value="">--Seleziona--</option>
 										<?php
 											$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
 											if(mysqli_connect_errno())
@@ -93,7 +93,7 @@
 								<label for="occupazione" class="col-sm-2 col-form-label label-right">Occupazione</label>
 								<div class="col-sm-10">
 									<select class="form-control" id="occupazione" name="sceltaoccupazione" required>
-										<option value="Select_one"></option>
+										<option value="">--Seleziona--</option>
 										<option value="Occupato t.i.">Occupato a tempo indeterminato</option>
 										<option value="Occupato t.d.">Occupato a tempo determinato</option>
 										<option value="Disoccupato">Disoccupato</option>

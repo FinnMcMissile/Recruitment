@@ -6,12 +6,11 @@
 	{
 		die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
 	}
-	echo("<head><title>Accesso</title><link rel='icon' href='Immagini/Microarea-Mago.net-Logo.ico'></head>");
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Login.html'>Torna alla pagina di accesso</a>";
 	session_start();
-	$stringa_query="SELECT Nome,Cognome,Email,Password,Bloccato FROM utenti WHERE Email='$email'";
-	$risultato=$connessione->query($stringa_query);
+	$comando="SELECT Nome,Cognome,Email,Password,Bloccato FROM utenti WHERE Email='$email'";
+	$risultato=$connessione->query($comando);
 	$riga=$risultato->fetch_assoc();
 	if($risultato->num_rows<=0)
 	{

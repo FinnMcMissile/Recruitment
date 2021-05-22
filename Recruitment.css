@@ -30,6 +30,8 @@ body{font-family: orkney-regular; margin: 0;}
 
 .mt-8{margin-top: 8rem;}
 
+.no-border{border-bottom: none;}
+
 .submit{background-color: #2b78e4; color: white; margin: 0px 100px 0px 100px;}
 
 .titolo{text-align: center;}
