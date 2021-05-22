@@ -32,9 +32,37 @@
 				</div>
 			</div>
 		</nav>
-		<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
 		<div class="container">
-		
+			<div class="offset-md-1 mt-2">
+				<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
+				<a href="./Nuovo_esaminatore.php">Aggiungi <i class="fa fa-user-plus"></i></a>
+			</div>
+			<div class="col-md-8 offset-md-2 mt-2">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Nome</th>
+							<th scope="col">Cognome</th>
+							<th scope="col">E-mail</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
+							if(mysqli_connect_errno())
+							{
+								die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
+							}
+							$stringa_query="SELECT * FROM esaminatori";
+							$risultato=$connessione->query($stringa_query);
+							while($riga=$risultato->fetch_assoc())
+							{
+								echo("<tr><td scope='row'>".$riga['Nome']."</td><td>".$riga['Cognome']."</td><td>".$riga['Email']."</td><td class='no-border'><a href='Modifica_esaminatore.php?idesaminatore=".$riga['ID_esaminatore']."'><i class='fa fa-pencil'></i></a></td><td class='no-border'><a href='Elimina_esaminatore.php?idesaminatore=".$riga['ID_esaminatore']."'><i class='fa fa-trash'></i></a></td></tr>");
+							}
+						?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</body>
 </html>

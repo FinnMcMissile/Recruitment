@@ -35,7 +35,7 @@
 		<div class="container">
 			<div class="offset-md-1 mt-2">
 				<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
-				<a href="./Nuova_posizione.php">crea posizione</a>
+				<a href="./Nuova_posizione.php">Aggiungi <i class="fa fa-plus"></i></a>
 			</div>
 			<div class="col-md-8 offset-md-2 mt-2">
 				<table class="table">

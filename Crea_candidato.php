@@ -21,19 +21,19 @@
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headercreate."<h1>Errore nella registrazione</h1>");
+		echo($headerapp."<h1>Errore nella registrazione</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	else if($risultato->num_rows>0)
 	{
-		die($headercreate."L'utente con questa E-mail esiste già.".$tornaindietro);
+		die($headerapp."L'utente con questa E-mail esiste già.".$tornaindietro);
 	}
 	$telefono=('+39 '.$telefono);
 	$comando="INSERT INTO candidati (Nome, Cognome, Telefono, Email, CV, Occupazione, ID_posizione, Tipo_contratto, Livello, RAL, Stato) VALUES('$nome','$cognome','$telefono','$email','$cv','$occupazione','$posizione','$tipocontratto','$livello','$ral','Colloquio da fissare')";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headercreate."<h1>Errore nell'inserimento</h1>");
+		echo($headerapp."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	header('Location: ./Lista_candidati.php');

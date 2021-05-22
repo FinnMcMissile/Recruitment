@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Modifica posizione</title>
+		<title>Nuovo esaminatore</title>
 		<link rel="icon" href="Immagini/Microarea-Mago.net-Logo.ico">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -32,52 +32,35 @@
 				</div>
 			</div>
 		</nav>
-		<?php
-			$posizione=$_GET['idposizione'];
-			$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
-			if(mysqli_connect_errno())
-			{
-				die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
-			}
-			$stringa_query="SELECT ID_posizione, Nome_posizione, Requisiti FROM posizioni WHERE ID_posizione='$posizione'";
-			$risultato=$connessione->query($stringa_query);
-			$riga=$risultato->fetch_assoc();
-		?>
 		<div class="container">
 			<div class="offset-md-2 mt-2">
-				<a href="./Posizioni.php"><img src="Immagini/Back.svg" class="back"></a>
+				<a href="./Esaminatori.php"><img src="Immagini/Back.svg" class="back"></a>
 				<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="back"></a>
 			</div>
 			<div class="col-md-6 offset-md-3 mt-2">
-				<form method="post" action="./Aggiorna_posizione.php">
+				<form method="post" action="./Crea_esaminatore.php">
 					<div class="card">
 						<div class="card-body">
-							<div class="mb-3 row" style="display: none">
-								<label for="id" class="col-sm-3 col-form-label label-right">ID posizione</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='id' name='idposizione' value='".$riga['ID_posizione']."' readonly>");
-									?>
+							<div class="mb-3 row">
+								<label for="nome" class="col-sm-2 col-form-label label-right">Nome</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="nome" name="txtnome" required>
 								</div>
 							</div>
 							<div class="mb-3 row">
-								<label for="nome" class="col-sm-3 col-form-label label-right">Nome posizione</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='nome' name='txtposizione' value='".$riga['Nome_posizione']."' required>");
-									?>
+								<label for="cognome" class="col-sm-2 col-form-label label-right">Cognome</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="cognome" name="txtcognome" required>
 								</div>
 							</div>
 							<div class="mb-3 row">
-								<label for="requisiti" class="col-sm-3 col-form-label label-right">Requisiti</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<textarea class='form-control' id='requisiti' name='txtrequisiti' required>".$riga['Requisiti']."</textarea>");
-									?>
+								<label for="email" class="col-sm-2 col-form-label label-right">E-mail</label>
+								<div class="col-sm-10">
+									<input type="email" class="form-control" id="email" name="txtemail" required>
 								</div>
 							</div>
 							<div>
-								<input type="submit" name="pulsanteinvia" value="Aggiorna" class="btn btn-primary">
+								<input type="submit" name="pulsanteinvia" value="Aggiungi" class="btn btn-primary">
 							</div>
 						</div>
 					</div>

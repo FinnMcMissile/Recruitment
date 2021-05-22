@@ -9,7 +9,7 @@
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Nuova_posizione.php'>Torna alla pagina di inserimento</a>";
 	session_start();
-	$comando="SELECT 'Nome_posizione' FROM posizioni WHERE Nome_posizione='$posizione'";
+	$comando="SELECT Nome_posizione FROM posizioni WHERE Nome_posizione='$posizione'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
@@ -18,7 +18,7 @@
 	}
 	else if($risultato->num_rows>0)
 	{
-		die($headercreate2."Questa posizione esiste già.".$tornaindietro);
+		die($headerposition."Questa posizione esiste già.".$tornaindietro);
 	}
 	$comando="INSERT INTO posizioni (Nome_posizione, Requisiti) VALUES('$posizione','$requisiti')";
 	$risultato=$connessione->query($comando);
