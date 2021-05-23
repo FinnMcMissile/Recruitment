@@ -26,12 +26,19 @@
 	</div>";
 	$headerlogin=str_replace("%titolo%","Accesso",$header);
 	$headerregister=str_replace("%titolo%","Registrazione",$header);
+	
 	$headerapp=str_replace("%titolo%","Nuovo candidato",str_replace("%php%",$php,$header));
 	//$headerappmodify=str_replace("%titolo%","Modifica candidato",str_replace("%php%",$php,$header));
 	//$headerappdelete=str_replace("%titolo%","Eliminazione candidato",str_replace("%php%",$php,$header));
+	
+	$headerint=str_replace("%titolo%","Nuovo colloquio",str_replace("%php%",$php,$header));
+	//$headerintres=str_replace("%titolo%","Esito colloquio",str_replace("%php%",$php,$header));
+	//$headerint*?*=str_replace("%titolo%","Nuovo esaminatore",str_replace("%php%",$php,$header));
+	
 	$headerex=str_replace("%titolo%","Nuovo esaminatore",str_replace("%php%",$php,$header));
 	//$headerexmodify=str_replace("%titolo%","Modifica esaminatore",str_replace("%php%",$php,$header));
 	//$headerexdelete=str_replace("%titolo%","Eliminazione esaminatore",str_replace("%php%",$php,$header));
+	
 	$headerposition=str_replace("%titolo%","Nuova posizione",str_replace("%php%",$php,$header));
 	$headerpositionmodify=str_replace("%titolo%","Modifica posizione",str_replace("%php%",$php,$header));
 	$headerpositiondelete=str_replace("%titolo%","Eliminazione posizione",str_replace("%php%",$php,$header));

@@ -85,13 +85,13 @@
 							<div class="mb-3 row">
 								<label for="data" class="col-sm-3 col-form-label label-right">Data</label>
 								<div class="col-sm-9">
-									<input type="date" class="form-control" id="data" name="choosedata" required>
+									<input type="date" class="form-control" id="data" name="sceltadata" required>
 								</div>
 							</div>
 							<div class="mb-3 row">
 								<label for="ora" class="col-sm-3 col-form-label label-right">Ora</label>
 								<div class="col-sm-9">
-									<input type="time" class="form-control" id="ora" name="choosetime" required>
+									<input type="time" class="form-control" id="ora" name="sceltaora" required>
 								</div>
 							</div>
 							<div class="form-group mb-3 row">
