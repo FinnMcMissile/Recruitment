@@ -32,9 +32,88 @@
 				</div>
 			</div>
 		</nav>
-		<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
 		<div class="container">
-		
+			<div class="offset-md-2 mt-2">
+				<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
+			</div>
+			<div class="col-md-6 offset-md-3 mt-2">
+				<form method="post" action="./Crea_colloquio.php">
+					<div class="card">
+						<div class="card-body">
+							<div class="mb-3 row">
+								<label for="candidato" class="col-sm-3 col-form-label label-right">Candidato</label>
+								<div class="col-sm-9">
+									<select class="form-control" id="candidato" name="sceltacandidato" required>
+										<option value="">--Seleziona--</option>
+										<?php
+											$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
+											if(mysqli_connect_errno())
+											{
+												die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
+											}
+											$stringa_query="SELECT ID_candidato, Nome, Cognome FROM candidati";
+											$risultato=$connessione->query($stringa_query);
+											while($riga=$risultato->fetch_assoc())
+											{
+												echo("<option value='".$riga['ID_candidato']."'>".$riga['Nome']." ".$riga['Cognome']."</option>");
+											}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="esaminatore" class="col-sm-3 col-form-label label-right">Esaminatore</label>
+								<div class="col-sm-9">
+									<select class="form-control" id="esminatore" name="sceltaesaminatore" required>
+										<option value="">--Seleziona--</option>
+										<?php
+											$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
+											if(mysqli_connect_errno())
+											{
+												die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
+											}
+											$stringa_query="SELECT ID_esaminatore, Nome, Cognome FROM esaminatori";
+											$risultato=$connessione->query($stringa_query);
+											while($riga=$risultato->fetch_assoc())
+											{
+												echo("<option value='".$riga['ID_esaminatore']."'>".$riga['Nome']." ".$riga['Cognome']."</option>");
+											}
+										?>
+									</select>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="data" class="col-sm-3 col-form-label label-right">Data</label>
+								<div class="col-sm-9">
+									<input type="date" class="form-control" id="data" name="choosedata" required>
+								</div>
+							</div>
+							<div class="mb-3 row">
+								<label for="ora" class="col-sm-3 col-form-label label-right">Ora</label>
+								<div class="col-sm-9">
+									<input type="time" class="form-control" id="ora" name="choosetime" required>
+								</div>
+							</div>
+							<div class="form-group mb-3 row">
+								<label for="metodo" class="col-sm-3 col-form-label label-right">Metodo colloquio</label>
+								<div class="col-sm-9">
+									<select class="form-control" id="metodo" name="sceltametodo" required>
+										<option value="">--Seleziona--</option>
+										<option value="In presenza">In presenza</option>
+										<option value="Skype">Skype</option>
+										<option value="Teams">Teams</option>
+										<option value="Zoom">Zoom</option>
+										<option value="Altro">Altro</option>
+									</select>
+								</div>
+							</div>
+							<div>
+								<input type="submit" name="pulsanteinvia" value="Aggiungi" class="btn btn-primary">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
