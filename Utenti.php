@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Esaminatori</title>
+		<title>Utenti</title>
 		<link rel="icon" href="Immagini/Microarea-Mago.net-Logo.ico">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
@@ -35,7 +35,7 @@
 		<div class="container">
 			<div class="offset-md-1 mt-2">
 				<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
-				<a href="./Nuovo_esaminatore.php">Aggiungi <i class="fa fa-user-plus"></i></a>
+				<a href="./Nuovo_utente.php">Aggiungi <i class="fa fa-user-plus"></i></a>
 			</div>
 			<div class="col-md-8 offset-md-2 mt-2">
 				<table class="table">
@@ -44,6 +44,10 @@
 							<th scope="col">Nome</th>
 							<th scope="col">Cognome</th>
 							<th scope="col">E-mail</th>
+							<th scope="col"><i class='fa fa-lock'></i></th>
+							<th scope="col">O</th>
+							<th scope="col">E</th>
+							<th scope="col">A</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -53,11 +57,16 @@
 							{
 								die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
 							}
-							$stringa_query="SELECT * FROM esaminatori";
+							$stringa_query="SELECT * FROM utenti";
 							$risultato=$connessione->query($stringa_query);
 							while($riga=$risultato->fetch_assoc())
 							{
-								echo("<tr><td scope='row'>".$riga['Nome']."</td><td>".$riga['Cognome']."</td><td>".$riga['Email']."</td><td class='no-border'><a href='Modifica_esaminatore.php?idesaminatore=".$riga['ID_esaminatore']."'><i class='fa fa-pencil'></i></a></td><td class='no-border'><a href='Elimina_esaminatore.php?idesaminatore=".$riga['ID_esaminatore']."'><i class='fa fa-trash'></i></a></td></tr>");
+								echo("<tr><td scope='row'>".$riga['Nome']."</td><td>".$riga['Cognome']."</td><td>".$riga['Email']."</td>");
+								echo($td=($riga['Bloccato']==true)?"<td scope='row'><i class='fa fa-check'></i></td>":"<td scope='row'></td>");
+								echo($td=($riga['Operativo']==true)?"<td scope='row'><i class='fa fa-check'></i></td>":"<td scope='row'></td>");
+								echo($td=($riga['Esaminatore']==true)?"<td scope='row'><i class='fa fa-check'></i></td>":"<td scope='row'></td>");
+								echo($td=($riga['Amministratore']==true)?"<td scope='row'><i class='fa fa-check'></i></td>":"<td scope='row'></td>");
+								echo("<td class='no-border'><a href='Modifica_utente.php?idutente=".$riga['ID_utente']."'><i class='fa fa-pencil'></i></a></td><td class='no-border'><a href='Elimina_utente.php?idutente=".$riga['ID_utente']."'><i class='fa fa-trash'></i></a></td></tr>");
 							}
 						?>
 					</tbody>

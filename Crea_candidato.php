@@ -17,7 +17,7 @@
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Nuovo_candidato.php'>Torna alla pagina di inserimento</a>";
 	session_start();
-	$comando="SELECT 'Email' FROM candidati WHERE Email='$email'";
+	$comando="SELECT Email FROM candidati WHERE Email='$email'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{

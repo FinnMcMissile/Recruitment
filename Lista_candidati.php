@@ -33,8 +33,6 @@
 			</div>
 		</nav>
 		<a href="./Recruitment.php"><img src="Immagini/Back.svg" class="back"></a>
-		<div class="container">
-		
-		</div>
+		<!--Codice-->
 	</body>
 </html>

@@ -33,11 +33,11 @@
 	
 	$headerint=str_replace("%titolo%","Nuovo colloquio",str_replace("%php%",$php,$header));
 	//$headerintres=str_replace("%titolo%","Esito colloquio",str_replace("%php%",$php,$header));
-	//$headerint*?*=str_replace("%titolo%","Nuovo esaminatore",str_replace("%php%",$php,$header));
+	//$headerint*?*=str_replace("%titolo%","Nuovo utente",str_replace("%php%",$php,$header));
 	
-	$headerex=str_replace("%titolo%","Nuovo esaminatore",str_replace("%php%",$php,$header));
-	//$headerexmodify=str_replace("%titolo%","Modifica esaminatore",str_replace("%php%",$php,$header));
-	//$headerexdelete=str_replace("%titolo%","Eliminazione esaminatore",str_replace("%php%",$php,$header));
+	$headeruser=str_replace("%titolo%","Nuovo utente",str_replace("%php%",$php,$header));
+	//$headerusermodify=str_replace("%titolo%","Modifica utente",str_replace("%php%",$php,$header));
+	//$headeruserdelete=str_replace("%titolo%","Eliminazione utente",str_replace("%php%",$php,$header));
 	
 	$headerposition=str_replace("%titolo%","Nuova posizione",str_replace("%php%",$php,$header));
 	$headerpositionmodify=str_replace("%titolo%","Modifica posizione",str_replace("%php%",$php,$header));

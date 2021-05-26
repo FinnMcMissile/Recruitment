@@ -74,10 +74,10 @@
 				</div>
 			</div>
 			<div class="row mt-3">
-				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Esaminatori.php'">
+				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Utenti.php'">
 					<div class="card-body">
 						<div class="call-to-action">
-							<h5 class="card-title">Esaminatori</h5>
+							<h5 class="card-title">Utenti</h5>
 							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>

@@ -1,6 +1,6 @@
 <?php
 	$candidato=$_POST['sceltacandidato'];
-	$esaminatore=$_POST['sceltaesaminatore'];
+	$utente=$_POST['sceltautente'];
 	$data=$_POST['sceltadata'];
 	$ora=$_POST['sceltaora'];
 	$metodo=$_POST['sceltametodo'];
@@ -21,9 +21,9 @@
 	}
 	else if($risultato->num_rows>0)
 	{
-		die($headerex."Il colloquio per questo candidato esiste già.".$tornaindietro);
+		die($headerint."Il colloquio per questo candidato esiste già.".$tornaindietro);
 	}
-	$comando="INSERT INTO colloqui (ID_candidato, ID_esaminatore, Data, Ora, Metodo_colloquio) VALUES('$candidato','$esaminatore','$data','$ora','$metodo')";
+	$comando="INSERT INTO colloqui (ID_candidato, ID_utente, Data, Ora, Metodo_colloquio) VALUES('$candidato','$utente','$data','$ora','$metodo')";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{

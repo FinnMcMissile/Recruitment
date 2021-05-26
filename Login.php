@@ -9,7 +9,7 @@
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Login.html'>Torna alla pagina di accesso</a>";
 	session_start();
-	$comando="SELECT Nome,Cognome,Email,Password,Bloccato FROM utenti WHERE Email='$email'";
+	$comando="SELECT Nome, Cognome, Email, Password, Bloccato, Operativo, Amministratore FROM utenti WHERE Email='$email'";
 	$risultato=$connessione->query($comando);
 	$riga=$risultato->fetch_assoc();
 	if($risultato->num_rows<=0)
@@ -23,6 +23,10 @@
 	elseif($riga['Bloccato']==true)
 	{
 		die($headerlogin."Il tuo account è bloccato. Contatta l'amministratore.".$tornaindietro);
+	}
+	else if($riga['Operativo']==false&&$riga['Amministratore']==false)
+	{
+		die($headerlogin."Il tuo account non è abilitato all'accesso.".$tornaindietro);
 	}
 	else
 	{

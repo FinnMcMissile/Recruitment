@@ -62,9 +62,9 @@
 								</div>
 							</div>
 							<div class="mb-3 row">
-								<label for="esaminatore" class="col-sm-3 col-form-label label-right">Esaminatore</label>
+								<label for="utente" class="col-sm-3 col-form-label label-right">Esaminatore</label>
 								<div class="col-sm-9">
-									<select class="form-control" id="esminatore" name="sceltaesaminatore" required>
+									<select class="form-control" id="utente" name="sceltautente" required>
 										<option value="">--Seleziona--</option>
 										<?php
 											$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
@@ -72,11 +72,11 @@
 											{
 												die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
 											}
-											$stringa_query="SELECT ID_esaminatore, Nome, Cognome FROM esaminatori";
+											$stringa_query="SELECT ID_utente, Nome, Cognome FROM utenti WHERE Esaminatore=true";
 											$risultato=$connessione->query($stringa_query);
 											while($riga=$risultato->fetch_assoc())
 											{
-												echo("<option value='".$riga['ID_esaminatore']."'>".$riga['Nome']." ".$riga['Cognome']."</option>");
+												echo("<option value='".$riga['ID_utente']."'>".$riga['Nome']." ".$riga['Cognome']."</option>");
 											}
 										?>
 									</select>

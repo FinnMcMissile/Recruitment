@@ -1,4 +1,5 @@
 <?php
+	$utente=$_POST['idutente'];
 	$nome=$_POST['txtnome'];
 	$cognome=$_POST['txtcognome'];
 	$email=$_POST['txtemail'];
@@ -8,9 +9,9 @@
 		die("<h1>Errore in MySQL o in phpMyAdmin</h1>");
 	}
 	require_once("Header.php");
-	$tornaindietro="&nbsp;<a href='./Nuovo_esaminatore.php'>Torna alla pagina di inserimento</a>";
+	$tornaindietro="&nbsp;<a href='./Utenti.php'>Torna indietro</a>";
 	session_start();
-	$comando="SELECT Email FROM esaminatori WHERE Email='$email'";
+	$comando="SELECT Email FROM utenti WHERE Email='$email'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
@@ -19,15 +20,15 @@
 	}
 	else if($risultato->num_rows>0)
 	{
-		die($headerex."Questo esaminatore esiste già.".$tornaindietro);
+		die($headeruser."Questo utente esiste già.".$tornaindietro);
 	}
-	$comando="INSERT INTO esaminatori (Nome, Cognome, Email) VALUES('$nome','$cognome','$email')";
+	$comando="UPDATE utenti SET Nome='$nome', Cognome='$cognome', Email='$email' WHERE ID_utente='$utente'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headerex."<h1>Errore nell'inserimento</h1>");
+		echo($headerpositionmodify."<h1>Errore nella modifica</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	header('Location: ./Esaminatori.php');
+	header('Location: ./Utenti.php');
 	$connessione->close();
 ?>
