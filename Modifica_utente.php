@@ -77,7 +77,7 @@
 								</div>
 							</div>
 							<div class="mb-3 row">
-								<label for="email" class="col-sm-3 col-form-label label-right">Email</label>
+								<label for="email" class="col-sm-3 col-form-label label-right">E-mail</label>
 								<div class="col-sm-9">
 									<?php
 										echo("<input type='email' class='form-control' id='email' name='txtemail' value='".$riga['Email']."' required>");

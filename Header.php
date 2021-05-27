@@ -28,7 +28,7 @@
 	$headerregister=str_replace("%titolo%","Registrazione",$header);
 	
 	$headerapp=str_replace("%titolo%","Nuovo candidato",str_replace("%php%",$php,$header));
-	//$headerappmodify=str_replace("%titolo%","Modifica candidato",str_replace("%php%",$php,$header));
+	$headerappmodify=str_replace("%titolo%","Modifica candidato",str_replace("%php%",$php,$header));
 	//$headerappdelete=str_replace("%titolo%","Eliminazione candidato",str_replace("%php%",$php,$header));
 	
 	$headerint=str_replace("%titolo%","Nuovo colloquio",str_replace("%php%",$php,$header));

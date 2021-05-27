@@ -29,10 +29,6 @@
 	{
 		die($headerregister."L'utente con questa E-mail esiste già.".$tornaindietro);
 	}
-	if(substr($telefono, 0, 3)!=='+39')
-	{
-		$telefono=('+39 '.$telefono);
-	}
 	$comando="INSERT INTO utenti (Nome, Cognome, Email, Password, Telefono, Bloccato) VALUES('$nome','$cognome','$email','$password_hash','$telefono',true)";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
