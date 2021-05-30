@@ -15,7 +15,7 @@
 		$comando="DELETE FROM posizioni WHERE ID_posizione='$posizione'";
 		$risultato=$connessione->query($comando);
 	}
-	else if($risultato==false)
+	elseif($risultato==false)
 	{
 		echo($headerpositiondelete."<h1>Errore nella cancellazione</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);

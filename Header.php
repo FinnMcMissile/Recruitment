@@ -24,20 +24,19 @@
 	<div style='display: inline-flex'>
 		<a href='Logout.php' class='nav-link underlined-link'><b>Disconnettiti</b>  <i class='fa fa-sign-out'></i></a>
 	</div>";
-	$headerlogin=str_replace("%titolo%","Accesso",$header);
-	$headerregister=str_replace("%titolo%","Registrazione",$header);
+	$headerlogin=str_replace("%titolo%","Accesso",str_replace("%php%","",$header));
+	$headerregister=str_replace("%titolo%","Registrazione",str_replace("%php%","",$header));
 	
 	$headerapp=str_replace("%titolo%","Nuovo candidato",str_replace("%php%",$php,$header));
 	$headerappmodify=str_replace("%titolo%","Modifica candidato",str_replace("%php%",$php,$header));
-	//$headerappdelete=str_replace("%titolo%","Eliminazione candidato",str_replace("%php%",$php,$header));
+	$headerappdelete=str_replace("%titolo%","Eliminazione candidato",str_replace("%php%",$php,$header));
 	
 	$headerint=str_replace("%titolo%","Nuovo colloquio",str_replace("%php%",$php,$header));
-	//$headerintres=str_replace("%titolo%","Esito colloquio",str_replace("%php%",$php,$header));
-	//$headerint*?*=str_replace("%titolo%","Nuovo utente",str_replace("%php%",$php,$header));
+	$headerintres=str_replace("%titolo%","Esito colloquio",str_replace("%php%",$php,$header));
 	
 	$headeruser=str_replace("%titolo%","Nuovo utente",str_replace("%php%",$php,$header));
-	//$headerusermodify=str_replace("%titolo%","Modifica utente",str_replace("%php%",$php,$header));
-	//$headeruserdelete=str_replace("%titolo%","Eliminazione utente",str_replace("%php%",$php,$header));
+	$headerusermodify=str_replace("%titolo%","Modifica utente",str_replace("%php%",$php,$header));
+	$headeruserdelete=str_replace("%titolo%","Eliminazione utente",str_replace("%php%",$php,$header));
 	
 	$headerposition=str_replace("%titolo%","Nuova posizione",str_replace("%php%",$php,$header));
 	$headerpositionmodify=str_replace("%titolo%","Modifica posizione",str_replace("%php%",$php,$header));

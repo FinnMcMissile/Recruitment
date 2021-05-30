@@ -15,9 +15,9 @@
 		$comando="DELETE FROM candidati WHERE ID_candidato='$candidato'";
 		$risultato=$connessione->query($comando);
 	}
-	else if($risultato==false)
+	elseif($risultato==false)
 	{
-		echo($headerpositiondelete."<h1>Errore nella cancellazione</h1>");
+		echo($headerappdelete."<h1>Errore nella cancellazione</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	header('Location: ./Lista_candidati.php');

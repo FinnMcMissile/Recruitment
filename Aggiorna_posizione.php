@@ -17,7 +17,7 @@
 		echo($headerposition."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	else if($risultato->num_rows>0)
+	elseif($risultato->num_rows>0)
 	{
 		die($headerposition."Questa posizione esiste già.".$tornaindietro);
 	}

@@ -19,7 +19,7 @@
 		echo($headerposition."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	else if($risultato->num_rows>0)
+	elseif($risultato->num_rows>0)
 	{
 		die($headerint."Il colloquio per questo candidato esiste già.".$tornaindietro);
 	}
@@ -30,6 +30,6 @@
 		echo($headerint."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	header('Location: ./Recruitment.php');
+	header('Location: ./Colloqui.php');
 	$connessione->close();
 ?>

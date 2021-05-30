@@ -24,7 +24,7 @@
 		echo($headerapp."<h1>Errore nella registrazione</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	else if($risultato->num_rows>0)
+	elseif($risultato->num_rows>0)
 	{
 		die($headerapp."L'utente con questa E-mail esiste già.".$tornaindietro);
 	}

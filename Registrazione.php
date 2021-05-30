@@ -18,14 +18,14 @@
 		die($headerregister."La lunghezza della password deve essere compresa tra gli 8 e i 20 caratteri.".$tornaindietro);
 	}
 	$password_hash=password_hash($password, PASSWORD_BCRYPT);
-	$comando="SELECT 'Email' FROM utenti WHERE Email='$email'";
+	$comando="SELECT Email FROM utenti WHERE Email='$email'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
 		echo($headerregister."<h1>Errore nella registrazione</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	else if($risultato->num_rows>0)
+	elseif($risultato->num_rows>0)
 	{
 		die($headerregister."L'utente con questa E-mail esiste già.".$tornaindietro);
 	}

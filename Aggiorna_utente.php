@@ -18,7 +18,7 @@
 		echo($headerposition."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	else if($risultato->num_rows>0)
+	elseif($risultato->num_rows>0)
 	{
 		die($headeruser."Questo utente esiste già.".$tornaindietro);
 	}
@@ -26,7 +26,7 @@
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headerpositionmodify."<h1>Errore nella modifica</h1>");
+		echo($$headerusermodify."<h1>Errore nella modifica</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	header('Location: ./Utenti.php');

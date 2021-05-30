@@ -4,7 +4,7 @@
 		<title>Modifica candidato</title>
 		<link rel="icon" href="Immagini/Microarea-Mago.net-Logo.ico">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 		<link rel="stylesheet" href="Recruitment.css">
 	</head>
 	<body>
@@ -114,9 +114,9 @@
 							</div>
 							<div class="mb-3 row">
 								<label for="cv" class="col-sm-3 col-form-label label-right">CV</label>
-								<div class="col-sm-9" style="display:none" id="fileinput">
+								<div class="col-sm-9" style="display: none" id="fileinput">
 									<div class="input-group">
-										<input type="file" class="form-control" id="cv" name="cvnewfile">
+										<input type="file" accept="application/pdf" class="form-control" id="cv" name="cvnewfile">
 										<button class="btn btn-outline-secondary" type="button" onclick="document.getElementById('fileinput').style.display='none';document.getElementById('filedesc').style.display='block'"><i class="fa fa-times"></i></button>
 									</div>
 								</div>
