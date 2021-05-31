@@ -44,52 +44,82 @@
 			$riga=$risultato->fetch_assoc();
 		?>
 		<div class="container">
-			<div class="offset-md-2 mt-2">
-				<a href="./Utenti.php"><img src="Immagini/Back.svg" class="back"></a>
-				<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="back"></a>
-			</div>
-			<div class="col-md-6 offset-md-3 mt-2">
-				<form method="post" action="./Aggiorna_utente.php">
-					<div class="card">
-						<div class="card-body">
-							<div class="mb-3 row" style="display: none">
-								<label for="id" class="col-sm-3 col-form-label label-right">ID posizione</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='id' name='idutente' value='".$riga['ID_utente']."' readonly>");
-									?>
+			<div class="row">
+				<div class="offset-md-1 mt-2 col-md-2 backbuttons">
+					<a href="./Utenti.php"><img src="Immagini/Back.svg" class="back"></a>
+					<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="home"></a>
+				</div>
+				<div class="col-md-6 mt-2">
+					<form method="post" action="./Aggiorna_utente.php">
+						<div class="card">
+							<div class="card-body">
+								<div class="mb-3 row" style="display: none">
+									<label for="id" class="col-sm-3 col-form-label label-right">ID posizione</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='id' name='idutente' value='".$riga['ID_utente']."' readonly>");
+										?>
+									</div>
 								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="nome" class="col-sm-3 col-form-label label-right">Nome</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='nome' name='txtnome' value='".$riga['Nome']."' required>");
-									?>
+								<div class="mb-3 row">
+									<label for="nome" class="col-sm-3 col-form-label label-right">Nome</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='nome' name='txtnome' value='".$riga['Nome']."' required>");
+										?>
+									</div>
 								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="cognome" class="col-sm-3 col-form-label label-right">Cognome</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='cognome' name='txtcognome' value='".$riga['Cognome']."' required>");
-									?>
+								<div class="mb-3 row">
+									<label for="cognome" class="col-sm-3 col-form-label label-right">Cognome</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='cognome' name='txtcognome' value='".$riga['Cognome']."' required>");
+										?>
+									</div>
 								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="email" class="col-sm-3 col-form-label label-right">E-mail</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='email' class='form-control' id='email' name='txtemail' value='".$riga['Email']."' required>");
-									?>
+								<div class="mb-3 row">
+									<label for="email" class="col-sm-3 col-form-label label-right">E-mail</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='email' class='form-control' id='email' name='txtemail' value='".$riga['Email']."' required>");
+										?>
+									</div>
 								</div>
-							</div>
-							<div>
-								<input type="submit" name="pulsanteinvia" value="Aggiorna" class="btn btn-primary">
+								<div class="mb-3 row">
+									<label for="telefono" class="col-sm-3 col-form-label label-right">Telefono</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='tel' class='form-control' id='telefono' name='numtel' value='".$riga['Telefono']."' required>");
+										?>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label for="tipo" class="col-sm-3 col-form-label label-right">Tipo</label>
+									<div class="col-sm-9">
+										<select class="form-control" id="tipo" name="tipo" required>
+											<?php
+												echo($op=$riga['Tipo']=="Operativo"?"<option value='Operativo' selected>Operativo</option>":"<option value='Operativo'>Operativo</option>");
+												echo($op=$riga['Tipo']=="Esaminatore"?"<option value='Esaminatore' selected>Esaminatore</option>":"<option value='Esaminatore'>Esaminatore</option>");
+												echo($op=$riga['Tipo']=="Amministratore"?"<option value='Amministratore' selected>Amministratore</option>":"<option value='Amministratore'>Amministratore</option>");
+											?>
+										</select>
+									</div>
+								</div>
+								<div class="mb-3">
+									<div class="form-check form-check-inline offset-md-3 no-margin">
+										<label class="form-check-label" for="bloccato">Bloccato</label>
+										<?php
+											echo($op=$riga['Bloccato']==true?"<input class='form-check-input' type='checkbox' id='bloccato' name='bloccato' checked>":"<input class='form-check-input' type='checkbox' id='bloccato' name='bloccato'>");
+										?>
+									</div>
+								</div>
+								<div>
+									<input type="submit" name="pulsanteinvia" value="Aggiorna" class="btn btn-primary">
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
 	</body>

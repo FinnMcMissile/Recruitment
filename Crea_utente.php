@@ -4,10 +4,8 @@
 	$email=$_POST['txtemail'];
 	$password=$_POST['txtpassword'];
 	$telefono=$_POST['numtelefono'];
+	$tipo=$_POST['tipo'];
 	$bloccato=$_POST['bloccato']=="on"?true:false;
-	$operativo=$_POST['operativo']=="on"?true:false;
-	$esaminatore=$_POST['esaminatore']=="on"?true:false;
-	$amministratore=$_POST['amministratore']=="on"?true:false;
 	$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
 	if(mysqli_connect_errno())
 	{
@@ -19,25 +17,21 @@
 	$lunghezza_password=mb_strlen($password);
 	if($lunghezza_password<8||$lunghezza_password>20)
 	{
-		die($headerregister."La lunghezza della password deve essere compresa tra gli 8 e i 20 caratteri.".$tornaindietro);
+		die($headeruser."La lunghezza della password deve essere compresa tra gli 8 e i 20 caratteri.".$tornaindietro);
 	}
 	$password_hash=password_hash($password, PASSWORD_BCRYPT);
 	$comando="SELECT Email FROM utenti WHERE Email='$email'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headerposition."<h1>Errore nell'inserimento</h1>");
+		echo($headeruser."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	elseif($risultato->num_rows>0)
 	{
 		die($headeruser."Questo utente esiste già.".$tornaindietro);
 	}
-	if(substr($telefono, 0, 3)!=='+39')
-	{
-		$telefono=('+39 '.$telefono);
-	}
-	$comando="INSERT INTO utenti (Nome, Cognome, Email, Password, Telefono, Bloccato, Operativo, Esaminatore, Amministratore) VALUES('$nome','$cognome','$email','$password_hash','$telefono','$bloccato','$operativo','$esaminatore','$amministratore')";
+	$comando="INSERT INTO utenti (Nome, Cognome, Email, Password, Telefono, Tipo, Bloccato) VALUES('$nome','$cognome','$email','$password_hash','$telefono','$tipo','$bloccato')";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{

@@ -44,91 +44,94 @@
 			$riga=$risultato->fetch_assoc();
 		?>
 		<div class="container">
-			<div class="offset-md-1 mt-2">
-				<a href="./Colloqui.php"><img src="Immagini/Back.svg" class="back"></a>
-				<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="back"></a>
-			</div>
-			<div class="col-md-6 offset-md-3 mt-2">
-				<form method="post" action="./Aggiorna_colloquio.php">
-					<div class="card">
-						<div class="card-body">
-							<div class="mb-3 row" style="display: none">
-								<label for="id" class="col-sm-3 col-form-label label-right">ID colloquio</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='id' name='idcolloquio' value='".$riga['ID_colloquio']."' readonly>");
-									?>
-								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="candidato" class="col-sm-3 col-form-label label-right">Candidato</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='candidato' name='candidato' value='".$riga['Nome_candidato']." ".$riga['Cognome_candidato']."' readonly>");
-									?>
-								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="utente" class="col-sm-3 col-form-label label-right">Esaminatore</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='candidato' name='candidato' value='".$riga['Nome_esaminatore']." ".$riga['Cognome_esminatore']."' readonly>");
-									?>
-								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="data" class="col-sm-3 col-form-label label-right">Data</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='date' class='form-control' id='data' name='data' value='".$riga['Data']."' readonly>");
-									?>
-								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="ora" class="col-sm-3 col-form-label label-right">Ora</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='time' class='form-control' id='ora' name='ora' value='".$riga['Ora']."' readonly>");
-									?>
-								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="metodo" class="col-sm-3 col-form-label label-right">Metodo colloquio</label>
-								<div class="col-sm-9">
-									<?php
-										echo("<input type='text' class='form-control' id='metodo' name='metodo' value='".$riga['Metodo_colloquio']."' readonly>");
-									?>
-								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="metodo" class="col-sm-3 col-form-label label-right">Esito</label>
-								<div class="col-sm-9 mt-2" style="display: inline-flex">
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="esito" id="positivo" value="Positivo" required>
-										<label class="form-check-label" for="positivo">
-											Positivo
-										</label>
-									</div>
-									<div class="form-check ms-2">
-										<input class="form-check-input" type="radio" name="esito" id="negativo" value="Negativo" required>
-										<label class="form-check-label" for="negativo">
-											Negativo
-										</label>
+			<div class="row">
+				<div class="offset-md-1 mt-2 col-md-2 backbuttons">
+					<a href="./Colloqui.php"><img src="Immagini/Back.svg" class="back"></a>
+					<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="home"></a>
+				</div>
+				<div class="col-md-6 mt-2">
+					<form method="post" action="./Aggiorna_colloquio.php">
+						<div class="card">
+							<div class="card-body">
+								<div class="mb-3 row" style="display: none">
+									<label for="id" class="col-sm-3 col-form-label label-right">ID colloquio</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='id' name='idcolloquio' value='".$riga['ID_colloquio']."' readonly>");
+										?>
 									</div>
 								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="descrizione" class="col-sm-3 col-form-label label-right">Note</label>
-								<div class="col-sm-9">
-									<textarea class="form-control" id="note" name="txtnote"></textarea>
+								<div class="mb-3 row">
+									<label for="candidato" class="col-sm-3 col-form-label label-right">Candidato</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='candidato' name='candidato' value='".$riga['Nome_candidato']." ".$riga['Cognome_candidato']."' readonly>");
+										?>
+									</div>
 								</div>
-							</div>
-							<div>
-								<input type="submit" name="pulsanteinvia" value="Conferma" class="btn btn-primary">
+								<div class="mb-3 row">
+									<label for="utente" class="col-sm-3 col-form-label label-right">Esaminatore</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='candidato' name='candidato' value='".$riga['Nome_esaminatore']." ".$riga['Cognome_esminatore']."' readonly>");
+										?>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label for="data" class="col-sm-3 col-form-label label-right">Data</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='date' class='form-control' id='data' name='data' value='".$riga['Data']."' readonly>");
+										?>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label for="ora" class="col-sm-3 col-form-label label-right">Ora</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='time' class='form-control' id='ora' name='ora' value='".$riga['Ora']."' readonly>");
+										?>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label for="metodo" class="col-sm-3 col-form-label label-right">Metodo colloquio</label>
+									<div class="col-sm-9">
+										<?php
+											echo("<input type='text' class='form-control' id='metodo' name='metodo' value='".$riga['Metodo_colloquio']."' readonly>");
+										?>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label for="metodo" class="col-sm-3 col-form-label label-right">Esito</label>
+									<div class="col-sm-9 mt-2" style="display: inline-flex">
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="esito" id="positivo" value="Positivo" required>
+											<label class="form-check-label" for="positivo">
+												Positivo
+											</label>
+										</div>
+										<div class="form-check ms-2">
+											<input class="form-check-input" type="radio" name="esito" id="negativo" value="Negativo" required>
+											<label class="form-check-label" for="negativo">
+												Negativo
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="mb-3 row">
+									<label for="descrizione" class="col-sm-3 col-form-label label-right">Note</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" id="note" name="txtnote"></textarea>
+										<div class="form-text"><i>Facoltativo.</i> La lunghezza massima è di 300 caratteri.</div>
+									</div>
+								</div>
+								<div>
+									<input type="submit" name="pulsanteinvia" value="Conferma" class="btn btn-primary">
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
 	</body>

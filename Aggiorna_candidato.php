@@ -26,6 +26,10 @@
 	require_once("Header.php");
 	$tornaindietro="&nbsp;<a href='./Lista_candidati.php'>Torna indietro</a>";
 	session_start();
+	if(substr(strtolower($cv), -4)!=".pdf")
+	{
+		die($headerappmodify."Il CV deve essere in formato PDF.".$tornaindietro);
+	}
 	$comando="UPDATE candidati SET Nome='$nome', Cognome='$cognome', Telefono='$telefono', Email='$email', CV='$cv', Occupazione='$occupazione', Tipo_contratto='$tipocontratto', Livello='$livello', RAL='$ral', Stato='$stato' WHERE ID_candidato='$candidato'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)

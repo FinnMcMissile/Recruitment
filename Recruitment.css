@@ -6,6 +6,10 @@ body{font-family: orkney-regular; margin: 0;}
 
 .back{width: 35px; height: 35px;}
 
+.backbuttons{text-align: end}
+
+.backlink{margin-left: 3rem;}
+
 .bg-light{background-color: #2b78e4!important;}
 
 .call-to-action{display: flex; justify-content: space-between;}
@@ -13,6 +17,8 @@ body{font-family: orkney-regular; margin: 0;}
 .clickable{cursor: pointer;}
 
 .freccia{position: relative; float: right; padding-right: 0.5em; width: 32px;}
+
+.home{width: 35px; height: 35px;}
 
 .input-caption label{text-align: end; margin-right: 5px; width: 100%;}
 
@@ -25,6 +31,8 @@ body{font-family: orkney-regular; margin: 0;}
 .input-message{text-align: center; margin-right: 5px; width: 100%;}
 
 .label-right{text-align: right;}
+
+.mt-05{margin-top: 0.5rem;}
 
 .mt-6{margin-top: 5rem;}
 

@@ -3,9 +3,9 @@
 	$cognome=$_POST['txtcognome'];
 	$telefono=$_POST['numtelefono'];
 	$email=$_POST['txtemail'];
+	$posizione=$_POST['sceltaposizione'];
 	$cv=str_replace("'","\'",$_POST['cvfilename']);
 	$occupazione=$_POST['sceltaoccupazione'];
-	$posizione=$_POST['sceltaposizione'];
 	$tipocontratto=$_POST['txtcontratto'];
 	$livello=$_POST['numlivello'];
 	$ral=$_POST['numral'];
@@ -28,8 +28,11 @@
 	{
 		die($headerapp."L'utente con questa E-mail esiste già.".$tornaindietro);
 	}
-	$telefono=('+39 '.$telefono);
-	$comando="INSERT INTO candidati (Nome, Cognome, Telefono, Email, CV, Occupazione, ID_posizione, Tipo_contratto, Livello, RAL, Stato) VALUES('$nome','$cognome','$telefono','$email','$cv','$occupazione','$posizione','$tipocontratto','$livello','$ral','Colloquio da fissare')";
+	if(substr(strtolower($cv), -4)!=".pdf")
+	{
+		die($headerapp."Il CV deve essere in formato PDF.".$tornaindietro);
+	}
+	$comando="INSERT INTO candidati (Nome, Cognome, Telefono, Email, ID_posizione, CV, Occupazione, Tipo_contratto, Livello, RAL, Stato) VALUES('$nome','$cognome','$telefono','$email','$posizione','$cv','$occupazione','$tipocontratto','$livello','$ral','Colloquio da fissare')";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{

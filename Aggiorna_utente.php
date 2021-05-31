@@ -3,6 +3,9 @@
 	$nome=$_POST['txtnome'];
 	$cognome=$_POST['txtcognome'];
 	$email=$_POST['txtemail'];
+	$telefono=$_POST['numtel'];
+	$tipo=$_POST['tipo'];
+	$bloccato=$_POST['bloccato']=="on"?true:false;
 	$connessione=new mysqli('localhost','root','','db-azienda_sviluppo_software');
 	if(mysqli_connect_errno())
 	{
@@ -15,14 +18,10 @@
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headerposition."<h1>Errore nell'inserimento</h1>");
+		echo($headerusermodify."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
-	elseif($risultato->num_rows>0)
-	{
-		die($headeruser."Questo utente esiste già.".$tornaindietro);
-	}
-	$comando="UPDATE utenti SET Nome='$nome', Cognome='$cognome', Email='$email' WHERE ID_utente='$utente'";
+	$comando="UPDATE utenti SET Nome='$nome', Cognome='$cognome', Email='$email', Telefono='$telefono', Tipo='$tipo', Bloccato='$bloccato' WHERE ID_utente='$utente'";
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{

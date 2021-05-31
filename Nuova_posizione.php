@@ -33,32 +33,35 @@
 			</div>
 		</nav>
 		<div class="container">
-			<div class="offset-md-2 mt-2">
-				<a href="./Posizioni.php"><img src="Immagini/Back.svg" class="back"></a>
-				<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="back"></a>
-			</div>
-			<div class="col-md-6 offset-md-3 mt-2">
-				<form method="post" action="./Crea_posizione.php">
-					<div class="card">
-						<div class="card-body">
-							<div class="mb-3 row">
-								<label for="nome" class="col-sm-3 col-form-label label-right">Nome posizione</label>
-								<div class="col-sm-9">
-									<input type="text" class="form-control" id="nome" name="txtposizione" required>
+			<div class="row">
+				<div class="offset-md-1 mt-2 col-md-2 backbuttons">
+					<a href="./Posizioni.php"><img src="Immagini/Back.svg" class="back"></a>
+					<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="home"></a>
+				</div>
+				<div class="col-md-6 mt-2">
+					<form method="post" action="./Crea_posizione.php">
+						<div class="card">
+							<div class="card-body">
+								<div class="mb-3 row">
+									<label for="nome" class="col-sm-3 col-form-label label-right">Nome posizione</label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control" id="nome" name="txtposizione" required>
+									</div>
 								</div>
-							</div>
-							<div class="mb-3 row">
-								<label for="descrizione" class="col-sm-3 col-form-label label-right">Requisiti</label>
-								<div class="col-sm-9">
-									<textarea class="form-control" id="descrizione" name="txtrequisiti" required></textarea>
+								<div class="mb-3 row">
+									<label for="descrizione" class="col-sm-3 col-form-label label-right">Requisiti</label>
+									<div class="col-sm-9">
+										<textarea class="form-control" id="descrizione" name="txtrequisiti" required></textarea>
+										<div class="form-text">La lunghezza massima è di 300 caratteri.</div>
+									</div>
 								</div>
-							</div>
-							<div>
-								<input type="submit" name="pulsanteinvia" value="Aggiungi" class="btn btn-primary">
+								<div>
+									<input type="submit" name="pulsanteinvia" value="Aggiungi" class="btn btn-primary">
+								</div>
 							</div>
 						</div>
-					</div>
-				</form>
+					</form>
+				</div>
 			</div>
 		</div>
 	</body>

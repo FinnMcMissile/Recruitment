@@ -14,12 +14,12 @@
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headerposition."<h1>Errore nell'inserimento</h1>");
+		echo($headerpositionmodify."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	elseif($risultato->num_rows>0)
 	{
-		die($headerposition."Questa posizione esiste già.".$tornaindietro);
+		die($headerpositionmodify."Questa posizione esiste già.".$tornaindietro);
 	}
 	$comando="UPDATE posizioni SET Nome_posizione='$nome', Requisiti='$requisiti' WHERE ID_posizione='$posizione'";
 	$risultato=$connessione->query($comando);

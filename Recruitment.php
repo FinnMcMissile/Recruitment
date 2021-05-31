@@ -37,7 +37,7 @@
 				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Lista_candidati.php'">
 					<div class="card-body">
 						<div class="call-to-action">
-							<h5 class="card-title">Lista candidati</h5>
+							<h5 class="card-title mt-05">Lista candidati</h5>
 							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Nuovo_candidato.php'">
 					<div class="card-body">
 						<div class="call-to-action">
-							<h5 class="card-title">Inserisci un nuovo candidato</h5>
+							<h5 class="card-title mt-05">Inserisci un nuovo candidato</h5>
 							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Convoca_candidato.php'">
 					<div class="card-body">
 						<div class="call-to-action">
-							<h5 class="card-title">Convoca un candidato</h5>
+							<h5 class="card-title mt-05">Convoca un candidato</h5>
 							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
@@ -67,7 +67,7 @@
 				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Colloqui.php'">
 					<div class="card-body">
 						<div class="call-to-action">
-							<h5 class="card-title">Esito colloqui</h5>
+							<h5 class="card-title mt-05">Colloqui</h5>
 							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>
@@ -77,7 +77,7 @@
 				<div class="card col-md-4 offset-md-4 clickable" onclick="location.href='./Utenti.php'">
 					<div class="card-body">
 						<div class="call-to-action">
-							<h5 class="card-title">Utenti</h5>
+							<h5 class="card-title mt-05">Utenti</h5>
 							<img class="freccia" src="Immagini/Freccia_destra.svg">
 						</div>
 					</div>

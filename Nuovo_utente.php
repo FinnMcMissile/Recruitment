@@ -33,11 +33,12 @@
 			</div>
 		</nav>
 		<div class="container">
-			<div class="offset-md-2 mt-2">
-				<a href="./Utenti.php"><img src="Immagini/Back.svg" class="back"></a>
-				<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="back"></a>
-			</div>
-			<div class="col-md-6 offset-md-3 mt-2">
+			<div class="row">
+				<div class="offset-md-1 mt-2 col-md-2 backbuttons">
+					<a href="./Utenti.php" class="backlink"><img src="Immagini/Back.svg" class="back"></a>
+					<a href="./Recruitment.php"><img src="Immagini/Home.svg" class="home"></a>
+				</div>
+				<div class="col-md-6 mt-2">
 				<form method="post" action="./Crea_utente.php">
 					<div class="card">
 						<div class="card-body">
@@ -72,22 +73,21 @@
 									<input type="tel" class="form-control" id="telefono" name="numtelefono" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="123 456 7890" required>
 								</div>
 							</div>
+							<div class="mb-3 row">
+								<label for="tipo" class="col-sm-2 col-form-label label-right">Tipo</label>
+								<div class="col-sm-10">
+									<select class="form-control" id="tipo" name="tipo" required>
+										<option value="">--Seleziona--</option>
+										<option value="Operativo">Operativo</option>
+										<option value="Esaminatore">Esaminatore</option>
+										<option value="Amministratore">Amministratore</option>
+									</select>
+								</div>
+							</div>
 							<div class="mb-3">
 								<div class="form-check form-check-inline offset-md-2 no-margin">
 									<label class="form-check-label" for="bloccato">Bloccato</label>
 									<input class="form-check-input" type="checkbox" id="bloccato" name="bloccato">
-								</div>
-								<div class="form-check form-check-inline no-margin">
-									<label class="form-check-label" for="operativo">Operativo</label>
-									<input class="form-check-input" type="checkbox" id="operativo" name="operativo">
-								</div>
-								<div class="form-check form-check-inline no-margin">
-									<label class="form-check-label" for="esaminatore">Esaminatore</label>
-									<input class="form-check-input" type="checkbox" id="esaminatore" name="esaminatore">
-								</div>
-								<div class="form-check form-check-inline no-margin">
-									<label class="form-check-label" for="amministratore">Amministratore</label>
-									<input class="form-check-input" type="checkbox" id="amministratore" name="amministratore">
 								</div>
 							</div>
 							<div>

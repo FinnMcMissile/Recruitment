@@ -16,7 +16,7 @@
 	$risultato=$connessione->query($comando);
 	if($risultato==false)
 	{
-		echo($headerposition."<h1>Errore nell'inserimento</h1>");
+		echo($headerint."<h1>Errore nell'inserimento</h1>");
 		die("Qualcosa è andato storto.".$tornaindietro);
 	}
 	elseif($risultato->num_rows>0)
